@@ -1,5 +1,5 @@
 (function( $ ){
-
+  $(window).on("load", function() {
     const $window = $(window);
     
     /* Select all images with data-parallax="1" */
@@ -12,7 +12,7 @@
 
     });
   
-    
+
 /* ------ Function to update parallax effect for images in a container or a site background image ----- */
     function updateParallax() {
 
@@ -107,11 +107,9 @@
 
 
 
-
             
         });
     }
-  $( document ).ready(function() {  
     // Initial call to set positions
     updateParallax();
     
