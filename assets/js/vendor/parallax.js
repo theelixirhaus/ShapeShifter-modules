@@ -111,10 +111,12 @@
             
         });
     }
-    
+  $( document ).ready(function() {  
     // Initial call to set positions
     updateParallax();
     
     // Update on scroll and window resize
     $window.on('scroll resize', updateParallax);
+    $(window).scroll();
+});
 })(jQuery);
