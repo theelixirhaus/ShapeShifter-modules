@@ -87,4 +87,5 @@ The license status is cached indefinitely once validated. It re-checks only when
 
 ## Support
 
-For support, documentation, and updates visit [shapeshifter-modules.com/contact](https://www.shapeshifter-modules.com/contact).
+For support, documentation, and updates visit [shapeshifter-modules.com/](https://www.shapeshifter-modules.com/),
+and checkout our Reddit Community [https://www.reddit.com/r/shapeshiftermodules/](r/shapeshiftermodules).

@@ -203,6 +203,9 @@ function ss_render_settings_sidebar(): string {
 			<a href="https://shapeshifter-modules.com/documentation" target="_blank" rel="noopener">
 				<?php esc_html_e( 'View documentation', 'shapeshifter' ); ?>
 			</a><div style="margin-bottom:5px"></div>
+			<a href="https://www.reddit.com/r/shapeshiftermodules/" target="_blank" rel="noopener">
+				<?php esc_html_e( 'Reddit: r/shapeshiftermodules', 'shapeshifter' ); ?>
+			</a><div style="margin-bottom:5px"></div>
 			<a href="https://shapeshifter-modules.com/contact" target="_blank" rel="noopener"><?php esc_html_e( 'Report a bug or request a feature', 'shapeshifter' ); ?></a>
 			<div style="margin-bottom:20px"></div>
 	
