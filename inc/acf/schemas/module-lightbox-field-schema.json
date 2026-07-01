@@ -1,0 +1,102 @@
+[
+    {
+        "key": "group_68dff742706a7",
+        "title": "ShapeShifter Modules: Lightbox Content",
+        "fields": [
+            {
+                "key": "field_68dff742f5013",
+                "label": "Add to site as a Lightbox",
+                "name": "mod_lghtbx",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "allow_in_bindings": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_68dff782f5014",
+                "label": "Lightbox name for trigger",
+                "name": "mod_lghtbx_name",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "lowercase name with no spaces",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_68dff742f5013",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "lightbox-name",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68dff8c9ab339",
+                "label": "Instructions",
+                "name": "",
+                "aria-label": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_68dff742f5013",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "To trigger this lightbox on site, link to \"#lightbox-[lightbox-name]\"",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "ss_module"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    }
+]

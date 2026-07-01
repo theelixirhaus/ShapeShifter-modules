@@ -1,0 +1,123 @@
+/* @override 
+
+	http://sandbox.local/wp-content/themes/shapeshifter/assets/css/theme/auto-import/owl-carousel.css?* */
+
+.owl-theme{
+	position: relative;
+}
+
+.owl-carousel {
+
+	margin-left:auto;
+	margin-right:auto;
+}
+.owl-carousel .owl-stage-outer {
+	overflow:hidden!important;
+
+}
+.owl-carousel  .owl-dots {
+	align-items: center;
+	justify-content:center;
+	width:100%;
+	display:flex;
+	position: absolute;
+    bottom: 0;
+    left:0;
+}
+
+.owl-carousel  .owl-nav.disabled {
+	display:none;
+}
+
+.owl-carousel .owl-dots button {
+	width: 18px;
+	height:18px;
+	border:3px solid var(--dp-grey-norm);
+	margin:0 8px;
+	padding: 0;
+	background-color:var(--dp-grey-norm);
+	transition:background-color .3s ease;
+}
+
+
+
+
+
+.owl-carousel.owl-nav button span {
+	visibility:hidden !important;
+	
+}
+
+
+
+.owl-carousel .owl-nav button{
+    position: absolute;
+	background: none;
+	border:none;
+	top: 50%;
+	font-size:0;
+	color:transparent
+
+}
+
+.slideshow .slide {
+	width:100%;
+}
+
+
+.owl-carousel .owl-nav button:after{
+	color:var(--dp-color-secondary);
+	content: '';
+    width: 25px;
+    height: 27px;
+    display: block;
+    transform-origin: 50%;
+    position: absolute;
+	
+
+
+}
+
+
+.owl-carousel .owl-nav button.owl-prev {
+	left: 0px;
+}
+.owl-carousel .owl-nav button.owl-prev:after{
+   border-bottom: 3px solid;
+	border-left: 3px solid;
+	transform-origin: 50%;
+	transform: rotate3d(-1, -2, -2, -65deg);
+	
+
+}
+
+.owl-carousel .owl-nav button.owl-next{
+    right: 30px;
+}
+
+.owl-carousel .owl-nav button.owl-next:after{
+    border-top: 3px solid;
+    border-right: 3px solid;
+    transform-origin: 50%;
+    transform: rotate3d(1, 2, 2, 65deg);
+}
+	
+.owl-carousel .owl-dots button {
+	width:12px!important;
+	height:12px !important;
+	border-radius:50%;
+
+
+}
+
+
+
+@media(max-width:768px) {
+	html .owl-carousel .owl-nav{
+		display:none
+	}
+}
+
+
+
+
