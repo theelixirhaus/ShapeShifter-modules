@@ -29,6 +29,8 @@ define( 'SS_ASSETS_URL',  SS_URL . 'assets/' );
 // Toggle: minify inlined CSS/JS. Has no effect on externally-linked assets.
 define( 'SS_MINIFY',      true );
 
+defined( 'SS_LICENSE_API_URL' ) || define( 'SS_LICENSE_API_URL', 'https://www.shapeshifter-modules.com' );
+
 require_once SS_INC . 'class-shapeshifter.php';
 
 add_action( 'plugins_loaded', [ 'ShapeShifter', 'boot' ] );
