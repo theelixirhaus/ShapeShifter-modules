@@ -21,7 +21,6 @@ function ss_enqueue_frontend_assets(): void {
 
 	ss_register_inline_script( 'ss-mod-video',     'js/mod-video.js' );
 	ss_register_inline_script( 'ss-mod-m1',        'js/mod-m1.js',        [ 'jquery' ] );
-	ss_register_inline_script( 'ss-mod-m1-bgvid',  'js/mod-m1-bgvideo.js',[ 'ss-mod-m1' ] );
 	ss_register_inline_script( 'ss-mod-m2',        'js/mod-m2.js',        [ 'jquery', 'ss-owl-carousel', 'ss-masonry' ] );
 	ss_register_inline_script( 'ss-mod-m3',        'js/mod-m3.js',        [ 'jquery' ] );
 	ss_register_inline_script( 'ss-mod-m5',        'js/mod-m5.js',        [ 'jquery' ] );

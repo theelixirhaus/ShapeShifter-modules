@@ -554,7 +554,12 @@ html .mod-m2 .owl-carousel .item:not(:first-child) {
 
 
 
-
+.acf-block-preview .bg-video, .acf-block-preview .vid-thumb, .acf-block-preview .vid-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left:0;
+}
 
 
 /* Canvas */
@@ -766,8 +771,8 @@ html  .interface-interface-skeleton__editor:has([aria-label="Meta Boxes"]) .inte
   }
 
    html body.is-fullscreen-mode .interface-interface-skeleton__sidebar {
-    top: 60px!important;
-    height: calc(100vh - 86px) !important;
+    top: 63px!important;
+    height: calc(100vh - 94px) !important;
    }
   html.show-block-panel .interface-interface-skeleton__sidebar {
      width:500px !important;

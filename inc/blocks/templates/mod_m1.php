@@ -139,7 +139,7 @@ $mod .= '
 <div ' . ($m1_id != '' ? ' id="' . $m1_id . '"' : '') . ' class="' . ($m1_usevid && $m1_usevid == true ? ' video-mantle ' : '') . 'mod mod-m1 ' . $m1_clmns_class . ' ' . $spacing_class . ' ' . ($m1_fillw ? '' : ' dp-contain dp-pos:'.$m1_align_mod) . ' ' . ($m1_clmn_rev_mob ? ' clmn-rev-mob ' : '') . ' ' . ($m1_clmn_rev_tab ? ' clmn-rev-tab ' : '') . '" ' . ($styles != '' ? 'style="' . $styles . '"' : '') . ' '.$m1_look.'>';
 
 
-$mod.='<div class="dp-pos:' . $m1_align_content . ' ' . $m1_clmns_fixedw_sm . $m1_clmns_fixedw . '" ' . $m1_fx_type . '>';
+$mod.='<div class="'.($m1_usevid && $m1_usevid == true ? 'dp-pos:rel':'').' dp-pos:' . $m1_align_content . ' ' . $m1_clmns_fixedw_sm . $m1_clmns_fixedw . '" ' . $m1_fx_type . '>';
 
 
 if (isset($m1_bgimg['url'])) {
@@ -166,10 +166,10 @@ if (isset($m1_bgimg['url'])) {
 if ($m1_usevid && $m1_usevid == true) {
     $mod .= '<div class="bg-video" data-diff="100" data-tpspeed="fixed" data-zoom="1" data-img-height="' . $bg_imgH . '" data-img-width="' . $bg_imgW . '">';
     $type = is_numeric($vid);
-    if ($type == 1) {
+    if ($type == 1 && !is_admin()) {
         $mod .= '  <iframe id="vimeo-vid-' . $vid . '" class="vimeo-frame autoplay project-video" src="https://player.vimeo.com/video/' . $vid . '?api=1&autoplay=1&background=1&playsinline=0&muted=1&player_id=vimeo-vid-' . $vid . '" width="100%" height="100%" frameborder="0" allow="autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
     } else {
-        $mod .= '<div id="video-placeholder-' . $vid . ' class="youtube-vid" data-vidid="' . $vid . '"></div> ';
+        $mod .= '<div id="video-placeholder-' . $vid . '" class="vid-thumb" data-vidid="' . $vid . '"><img src="'.ss_grab_vimeo_thumbnail($vid).'" alt="Video '.$vid.' placeholder image"></div> ';
     }
     $mod .= ' </div>';
 }
@@ -395,10 +395,10 @@ if (have_rows('m1_clmns')) {
             
             $mod .= '<div class="bg-video" data-diff="100" data-tpspeed="fixed" data-zoom="1" data-img-height="' . $bg_imgH . '" data-img-width="' . $bg_imgW . '">';
             $type = is_numeric($vid);
-            if ($type == 1) {
+            if ($type == 1 && !is_admin()) {
                 $mod .= '  <iframe id="vimeo-vid-' . $vid . '" class="vimeo-frame autoplay project-video" src="https://player.vimeo.com/video/' . $vid . '?api=1&autoplay=1&background=1&playsinline=0&muted=1&player_id=vimeo-vid-' . $vid . '" width="100%" height="100%" frameborder="0" allow="autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
             } else {
-                $mod .= '<div id="video-placeholder-' . $vid . ' class="youtube-vid" data-vidid="' . $vid . '"></div> ';
+                $mod .= '<div id="video-placeholder-' . $vid . '" class="vid-thumb" data-vidid="' . $vid . '"><img src="'.ss_grab_vimeo_thumbnail($vid).'" alt="Video '.$vid.' placeholder image"></div> ';
             }
      
             $mod .= ' </div>';

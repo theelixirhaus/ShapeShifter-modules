@@ -8,17 +8,23 @@ $form_scripts     = [];
 $ss_faqarray      = [];
 $ss_globalscripts = '';
 
-function ss_grab_vimeo_thumbnail( $vimeo_url, $size = null ) {
-	if ( ! $vimeo_url ) {
-		return false;
-	}
-	$response = wp_remote_get( "https://vimeo.com/api/v2/video/{$vimeo_url}.php" );
-	if ( is_wp_error( $response ) ) {
-		return false;
-	}
-	$body = wp_remote_retrieve_body( $response );
-	$hash = @unserialize( $body );
-	return $hash[0]['thumbnail_large'] ?? false;
+function ss_grab_vimeo_thumbnail( $vimeo_id, $size = null ) {
+	$url = "https://vimeo.com/api/oembed.json?url=https://vimeo.com/" . urlencode($vimeo_id);
+    
+    // Use file_get_contents (simple) or cURL for better control
+    $response = @file_get_contents($url);
+    
+    if ($response === false) {
+        return false; // Network error or video not found
+    }
+    
+    $data = json_decode($response, true);
+    
+    if (json_last_error() !== JSON_ERROR_NONE || !isset($data['thumbnail_url'])) {
+        return false;
+    }
+    
+    return $data['thumbnail_url'];
 }
 
 function ss_grab_youtube_thumbnail( $id ) {
@@ -362,8 +368,8 @@ function ss_setslide( $params ) {
 			global $loadvimeo;
 			$loadvimeo = true;
 			$moditem  .= '<div class="vid-tint" style="background-color:rgba(' . get_field( 'm1_vid_tint_rgba' ) . ')"></div>';
-			$moditem  .= '<div class="bg-video" data-diff="100" data-tpspeed="fixed" data-zoom="1" data-img-height="' . $img_h . '" data-img-width="' . $img_w . '">
-				<iframe src="https://player.vimeo.com/video/' . $params['m2_vidid'] . '?api=1&autoplay=1&background=1&playsinline=1&muted=1&player_id=vimeo-vid-' . $params['m2_vidid'] . '" width="100%" height="100%" frameborder="0" allow="autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen id="vimeo-vid-' . $params['m2_vidid'] . '" class="vimeo-frame autoplay project-video"></iframe>
+			$moditem  .= '<div class="bg-video" data-diff="100" data-tpspeed="fixed" data-zoom="1" data-img-height="' . $img_h . '" data-img-width="' . $img_w . '">'.(!is_admin()?'
+				<iframe src="https://player.vimeo.com/video/' . $params['m2_vidid'] . '?api=1&autoplay=1&background=1&playsinline=1&muted=1&player_id=vimeo-vid-' . $params['m2_vidid'] . '" width="100%" height="100%" frameborder="0" allow="autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen id="vimeo-vid-' . $params['m2_vidid'] . '" class="vimeo-frame autoplay project-video"></iframe>':'<div id="video-placeholder-' . $params['m2_vidid'] . '" class="vid-thumb" data-vidid="' . $vid . '"><img src="'.ss_grab_vimeo_thumbnail($params['m2_vidid']).'" alt="Video '.$vid.' placeholder image"></div>').'
 			</div>';
 		} elseif ( $slidetype === 'youtube' ) {
 			$moditem .= '<div class="bg-video"><div id="player_' . $params['m2_vidid'] . '" class="youtube"></div></div>';

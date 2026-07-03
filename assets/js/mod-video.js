@@ -167,7 +167,7 @@ if($('.mod .bg-video').length){
 
             }  
             else{
-                console.log('video is tall');
+               /*  console.log('video is tall'); */
                 $(thisv).height(bh);
 
                 if(nph<bh){
