@@ -639,6 +639,8 @@ body.block-editor-page
        margin:30px 23px 40px !important;
       height: calc(100vh - 210px);
        overflow-y: auto !important;
+          width:auto !important;
+
       
 }
 
@@ -649,6 +651,7 @@ html:not(.draggable-sidebar)  .interface-navigable-region.interface-interface-sk
       overflow: hidden!important;
       height:calc(100vh - 86px);
       box-sizing: border-box;
+   
   }
 
 
@@ -686,12 +689,27 @@ html .block-editor-block-card__title:has(.alttitle) .block-editor-block-card__na
 
 
 @media(min-width:2200px){
-  html:not(.show-block-panel) .editor-styles-wrapper.block-editor-writing-flow{
-    width:calc(100% - 500px)  !important;
+ 
+
+   html.show-block-panel body:not(.is-fullscreen-mode) .is-root-container{
+    width:calc(100% - 632px) !important;
   }
-  html.show-block-panel .editor-styles-wrapper.block-editor-writing-flow{
-    width:calc(100% - 1000px) !important;
+
+  html:not(.draggable-sidebar).show-block-panel  body:not(.is-fullscreen-mode) .interface-interface-skeleton__editor:has([aria-label="Meta Boxes"])  .is-root-container{
+      max-width: calc(100vw - 1240px) !important;
+
   }
+
+
+  html.show-block-panel body.is-fullscreen-mode  .is-root-container{
+    width:calc(100% - 635px) !important;
+  }
+
+  html:not(.draggable-sidebar).show-block-panel  body.is-fullscreen-mode .interface-interface-skeleton__editor:has([aria-label="Meta Boxes"]) .is-root-container{
+      max-width: calc(100vw - 1065px) !important;
+
+  }
+
 }
 
 
@@ -728,15 +746,23 @@ html .block-editor-block-card__title:has(.alttitle) .block-editor-block-card__na
    
     width: auto !important;
     left: auto !important;
-    right:500px!important;
    
     box-shadow: 0px 5px 5px rgba(0, 0, 0, .3);
     
   }
 
+
+html   .interface-interface-skeleton__sidebar{
+    right:0px!important;
+}
+
+html  .interface-interface-skeleton__editor:has([aria-label="Meta Boxes"]) .interface-interface-skeleton__sidebar{
+    right:500px!important;
+}
+
   html body:not(.is-fullscreen-mode) .interface-interface-skeleton__sidebar {
-     height: calc(100vh - 122px) !important;
-      top: 95px!important;
+     height: calc(100vh - 127px) !important;
+      top: 96px!important;
   }
 
    html body.is-fullscreen-mode .interface-interface-skeleton__sidebar {
@@ -768,8 +794,15 @@ html .block-editor-block-card__title:has(.alttitle) .block-editor-block-card__na
   }
 
 
-  html.show-block-panel .interface-navigable-region.interface-interface-skeleton__content .editor-visual-editor {
+  html.show-block-panel   .interface-interface-skeleton__editor:has([aria-label="Meta Boxes"]) .interface-navigable-region.interface-interface-skeleton__content .editor-visual-editor
+  {
       max-width: calc(100vw - 1000px) !important;
+
+  }
+
+
+  html.show-block-panel .interface-navigable-region.interface-interface-skeleton__content .editor-visual-editor {
+      max-width: calc(100vw - 500px) !important;
 
   }
 

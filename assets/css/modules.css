@@ -266,7 +266,7 @@ html .mod-bg-tint+* {
 /* @end */
 
 /* @group Mod M1 */
-html .m1_img:not(.parallax) {
+html .m1_img {
 	position: absolute;
 	width: 100%;
 	height: 100%;
