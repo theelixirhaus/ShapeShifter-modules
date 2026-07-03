@@ -696,7 +696,7 @@ html .block-editor-block-card__title:has(.alttitle) .block-editor-block-card__na
   }
 
   html:not(.draggable-sidebar).show-block-panel  body:not(.is-fullscreen-mode) .interface-interface-skeleton__editor:has([aria-label="Meta Boxes"])  .is-root-container{
-      max-width: calc(100vw - 1240px) !important;
+      max-width: calc(100vw - 1225px) !important;
 
   }
 
