@@ -325,7 +325,7 @@ html .m1_img {
 }
 
 @media(min-width:601px) and (max-width:1024px) {
-	html .mod-m1.clmn-rev-tab>div html .mod-m1.clmn-rev-tab [class*="dp-grid"] {
+	html .mod-m1.clmn-rev-tab>div html, .mod-m1.clmn-rev-tab [class*="dp-grid"] {
 		display: flex;
 		flex-direction: column-reverse;
 	}
