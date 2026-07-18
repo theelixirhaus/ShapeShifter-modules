@@ -311,7 +311,7 @@ function ss_setslide( $params ) {
 		$params['m2_bgimg'] = ss_get_thumb( $params['m2_vidid'] );
 	}
 
-	$params['m2_btn_txt'] = $params['m2_btn_txt'] ?: 'Click Here';
+	$params['m2_btn_txt'] = $params['m2_btn_txt'] ? $params['m2_btn_txt'] : 'Click Here';
 	$m2_bgimg             = $params['m2_bgimg'] ?? '';
 	$m2_bgimg_alt         = $m2_bgimg['alt'] ?? $m2_bgimg['title'] ?? '';
 
@@ -463,13 +463,12 @@ function ss_setitem( $params ) {
 		$params['m2_bgimg'] = ss_get_thumb( $params['m2_vidid'] );
 	}
 
-	$params['m2_btn_txt'] = isset($params['m2_btn_txt']) && $params['m2_btn_txt']!='' ?: 'Click Here';
+	$params['m2_btn_txt'] = isset($params['m2_btn_txt']) && $params['m2_btn_txt']!='' ? $params['m2_btn_txt'] : 'Click Here';
 	$btnlnk               = ! empty( $params['m2_use_url'] ) ? $params['m2_url'] : ( $params['m2_lnk'] ?? '' );
 	$target               = ! empty( $params['m2_new_win'] ) ? ' target="_blank" ' : '';
 	$m2_bgimg             = $params['m2_bgimg'] ?? '';
 	$m2_bgimg_alt         = $m2_bgimg['alt'] ?? $m2_bgimg['title'] ?? '';
 	$m2_id                = isset( $params['m2_id'] ) ? 'data-id="' . $params['m2_id'] . '"' : '';
-
 
 	$moditem  = '<!-- Start Grid Item -->';
 
