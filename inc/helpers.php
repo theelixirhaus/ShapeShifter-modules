@@ -470,12 +470,16 @@ function ss_setitem( $params ) {
 	$m2_bgimg_alt         = $m2_bgimg['alt'] ?? $m2_bgimg['title'] ?? '';
 	$m2_id                = isset( $params['m2_id'] ) ? 'data-id="' . $params['m2_id'] . '"' : '';
 
+
 	$moditem  = '<!-- Start Grid Item -->';
-	$moditem .= '<div class="mod-grid-item ' . $txt_lt . ' ' . $m2_class . ' ' . ( ( $params['slidetype'] ?? '' ) === 'post' ? 'article-link' : '' ) . '" data-type="' . ( $params['slidetype'] ?? '' ) . '" data-button="' . esc_attr( $btnlnk ) . '" ' . $m2_id . ' data-linktype="' . ( ! empty( $params['m2_blocklink'] ) ? 'blocklink' : 'buttonlink' ) . '">
+
+	$moditem .= '<div class="mod-grid-item '.$params['m2_bgimg'].'' . $txt_lt . ' ' . $m2_class . ' ' . ( ( $params['slidetype'] ?? '' ) === 'post' ? 'article-link' : '' ) . '" data-type="' . ( $params['slidetype'] ?? '' ) . '" data-button="' . esc_attr( $btnlnk ) . '" ' . $m2_id . ' data-linktype="' . ( ! empty( $params['m2_blocklink'] ) ? 'blocklink' : 'buttonlink' ) . '">
 		<div class="mod-grid-item-pad">
 			<div class="article ' . ( $params['m2_txt_algnmnt'] ?? '' ) . '">';
 
-	if ( isset( $params['m2_usepages'] ) && ( ! empty( $params['m2_grid_options']['img'] ) || ! empty( $params['m2_bgclr'] ) ) ) {
+		
+
+	if ( isset( $params['m2_usepages'] ) && ( !empty( $params['m2_grid_options']['img'] )) ) {
 		$moditem .= '<div style="' . $styles . ' height:calc(600px / ' . ( $params['m2_grid_clmns'] ?? 1 ) . ')" class="thumb ' . $m2_fitimg . '" ' . $m2_lazy . '>';
 
 		if ( ! empty( $params['m2_head'] ) && ! empty( $params['m2_txtovrImg'] ) && ! empty( $params['m2_grid_options']['head'] ) ) {
@@ -487,12 +491,14 @@ function ss_setitem( $params ) {
 		$img_w       = $m2_bgimg_sz === 'full' ? 350 : ( $m2_bgimg[1] ?? 350 );
 		$img_h       = $m2_bgimg_sz === 'full' ? 300 : ( $m2_bgimg[2] ?? 300 );
 
+
 		if ( ( $params['slidetype'] ?? '' ) === 'post' ) {
 			$feat_img_thumb = get_field( 'featured_image_mob', $params['m2_id'] );
 			if ( $feat_img_thumb !== '' ) {
 				$imgpath = $feat_img_thumb;
 			}
 		}
+
 		if($imgpath==''){
 			$imgpath = $m2_bgimg[0];
 			$img_w =$m2_bgimg[1];
@@ -503,7 +509,7 @@ function ss_setitem( $params ) {
 		}
 
 		$moditem .= '</div>';
-	} elseif ( ! empty( $params['m2_bgimg'] ) || ! empty( $params['m2_bgclr'] ) ) {
+	} elseif ( (! empty( $params['m2_bgimg'])  || ! empty( $params['m2_bgclr'] )) && !empty( $params['m2_grid_options']['img'])) {
 		$moditem .= '<div style="' . $styles . ' height:calc(600px / ' . ( $params['m2_grid_clmns'] ?? 1 ) . ');" class="thumb ' . $m2_fitimg . '">';
 
 		$m2_bgimg_sz = $params['m2_bgimg_sz'] ?: 'full';
@@ -516,6 +522,8 @@ function ss_setitem( $params ) {
 			$img_w =$m2_bgimg[0][1];
 			$img_h = $m2_bgimg[0][2];
 		}
+
+
 		if ( $imgpath ) {
 			$moditem .= '<img src="' . esc_url( $imgpath ) . '" alt="' . esc_attr( $m2_bgimg_alt ) . '" ' . $m2_lazy . ' width="' . $img_w . '" height="' . $img_h . '">';
 		}

@@ -1496,7 +1496,7 @@
                 },
                 "choices": {
                     "visible": "Visible",
-                    "hidden": "HIdden"
+                    "hidden": "Hidden"
                 },
                 "default_value": false,
                 "return_format": "value",

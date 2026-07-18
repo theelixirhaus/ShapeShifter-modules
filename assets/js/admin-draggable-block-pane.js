@@ -35,9 +35,11 @@ checkfor_sidebar = function(){
     $('html.show-block-panel').removeClass('show-block-panel');
    }
 
-if($(".admin-ui-navigable-region.edit-post-meta-boxes-main").length>0){
+if($(".admin-ui-navigable-region.edit-post-meta-boxes-main").length>0 || $('[aria-label="Meta Boxes"]').length>0){
 
   $('.admin-ui-navigable-region.edit-post-meta-boxes-main').removeClass('admin-ui-navigable-region').removeClass('edit-post-meta-boxes-main');
+$('.edit-post-meta-boxes-main__presenter').remove();
+  $('.edit-post-layout__metaboxes.edit-post-meta-boxes-main__liner').removeAttr('hidden');
   }
   
 }

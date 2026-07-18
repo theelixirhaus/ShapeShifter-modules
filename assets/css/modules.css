@@ -841,12 +841,12 @@ html .mod-m1 .mod-rowcnt-1>div .dp-contain {
 		margin: auto;
 	}
 
-	.mod-m2.mod-txt-lght .item p {
+	.mod-m2.mod-txt-lght .article p {
 		color: white;
 	}
 
 
-	.mod-m2 .item .thumb {
+	.mod-m2 .article .thumb {
 		background-position: center;
 		background-repeat: no-repeat;
 		-webkit-transition: background-color 0.3s ease;
@@ -856,30 +856,30 @@ html .mod-m1 .mod-rowcnt-1>div .dp-contain {
 		transition: background-color 0.3s ease;
 	}
 
-	.mod-m2 .item .thumb:has(h3) {
+	.mod-m2 .article .thumb:has(h3) {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 
 	}
 
-	.mod-m2 .item .thumb:has(h3) h3 {
+	.mod-m2 .article.thumb:has(h3) h3 {
 		position: Absolute;
 
 
 	}
 
 
-	.mod-m2 .item .thumb img {
+	.mod-m2 .article .thumb img {
 		width: 100%;
 	}
 
-	.mod-m2 .item .thumb:not(.fitimg) img {
+	.mod-m2 .article .thumb:not(.fitimg) img {
 		object-fit: cover;
 		height: 100%;
 	}
 
-	.mod-m2 .item .thumb.fitimg img {
+	.mod-m2 .article .thumb.fitimg img {
 		object-fit: contain;
 		height: 100%;
 	}
@@ -901,13 +901,13 @@ html .mod-m1 .mod-rowcnt-1>div .dp-contain {
 		counter-reset: item;
 	}
 
-	.mod-m2 .numblist .item {
+	.mod-m2 .numblist .article {
 		margin-left: 0;
 		padding-left: 0;
 		text-align: left;
 	}
 
-	.mod-m2 .numblist .item::before .info {
+	.mod-m2 .numblist .article::before .info {
 		content: "";
 		display: block;
 		position: absolute;
@@ -923,7 +923,7 @@ html .mod-m1 .mod-rowcnt-1>div .dp-contain {
 		position: relative;
 	}
 
-	.mod-m2 .numblist .item .info::before {
+	.mod-m2 .numblist .article .info::before {
 		position: absolute;
 		left: 0px;
 		left: 5px;
@@ -937,18 +937,18 @@ html .mod-m1 .mod-rowcnt-1>div .dp-contain {
 		color: var(--dp-color-quinary);
 	}
 
-	.mod-m2.news-links .item .button {
+	.mod-m2.news-links .article .button {
 		padding: 3px 0px 2px;
 		background: none;
 		color: var(--dp-color-quaternary);
 		font-weight: 400;
 	}
 
-	.mod-m2.news-links .item .button:hover {
+	.mod-m2.news-links .article .button:hover {
 		color: var(--dp-color-primary);
 	}
 
-	.mod-m2.news-links .item .button:after {
+	.mod-m2.news-links .article .button:after {
 		content: " \00bb";
 		font-size: 1.3em;
 		font-weight: 100;

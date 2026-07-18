@@ -27,7 +27,7 @@ function ss_register_settings_field_group(): void {
                 "name"=> "",
                 "aria-label"=> "",
                 "type"=> "Usage=>",
-                "instructions"=> "<h4>Wordpress's Block Editor is a great modern feature, but previews your page with generic styling. Add your website's stylesheet in the field below to have it style your ShapeShifter modules just like the fontend of the site. This plugin will also stylize the Block Editor with a draggable and collapsable sidebar.</h4>",
+                "instructions"=> "<h4>Wordpress's Block Editor is a great modern feature, but previews your page with generic styling. <br>Add your website's stylesheet in the field below to have it style your ShapeShifter modules just like the fontend of the site. <br>This plugin will also stylize the Block Editor with a draggable and collapsable sidebar.</h4>",
                 "required"=> 0,
                 "conditional_logic"=> 0,
                 
@@ -37,7 +37,7 @@ function ss_register_settings_field_group(): void {
             ],
 		[
 			'key'          => 'field_ss_editor_css_url',
-			'label'        => __( 'Site Style Sheet URL', 'shapeshifter' ),
+			'label'        => __( 'Site Stylesheet URL', 'shapeshifter' ),
 			'name'         => 'ss_editor_css_url',
 			'type'         => 'text',
 			'instructions' => __( 'Stylesheet to load (and rescope) inside the Block Editor. Accepts an absolute URL (https://example.com/style.css) or a site-relative path starting with a slash (/style.css).', 'shapeshifter' ),
