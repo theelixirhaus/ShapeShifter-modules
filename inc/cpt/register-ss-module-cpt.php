@@ -26,7 +26,7 @@ function ss_register_module_cpt(): void {
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'show_in_rest'       => true,
-			'menu_icon'          => 'dashicons-screenoptions',
+			'menu_icon'          => 'dashicons-schedule',
 			'menu_position'      => 25,
 			'supports'           => [ 'title', 'editor', 'revisions', 'custom-fields' ],
 			'has_archive'        => false,
