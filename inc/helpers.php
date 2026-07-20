@@ -541,7 +541,7 @@ function ss_setitem( $params ) {
 	}
 
 	if ( isset( $params['m2_usepages'] ) && ( $params['slidetype'] ?? '' ) !== 'review' && ( $params['slidetype'] ?? '' ) !== 'post' && ! empty( $params['m2_grid_options']['date'] ) ) {
-		$moditem .= '<h4 class="dp-txt-sm">' . $params['m2_postdate'] . '</h4>';
+		$moditem .= '<h4 class="dp-txt:sm">' . $params['m2_postdate'] . '</h4>';
 	}
 
 	if ( isset( $params['m2_usepages'] ) ) {
@@ -557,7 +557,7 @@ function ss_setitem( $params ) {
 	}
 
 	if ( isset( $params['m2_usepages'] ) && ! empty( $params['m2_grid_options']['date'] ) && ( $params['slidetype'] ?? '' ) === 'review' ) {
-		$moditem .= '<h4 class="dp-txt-sm">' . $params['m2_postdate'] . '</h4>';
+		$moditem .= '<h4 class="dp-txt:sm">' . $params['m2_postdate'] . '</h4>';
 		$moditem .= '<div class="starratting" data-starnum="' . ( $params['starnum'] ?? '' ) . '"><div class="stars"></div></div>';
 	}
 
