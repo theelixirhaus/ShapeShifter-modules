@@ -508,7 +508,7 @@ function ss_setitem( $params ) {
 		}
 
 		$moditem .= '</div>';
-	} elseif ( (! empty( $params['m2_bgimg'])  || ! empty( $params['m2_bgclr'] )) && !empty( $params['m2_grid_options']['img'])) {
+	} elseif ( !isset( $params['m2_usepages'] ) && (! empty( $params['m2_bgimg'])  || ! empty( $params['m2_bgclr'] ))) {
 		$moditem .= '<div style="' . $styles . ' height:calc(600px / ' . ( $params['m2_grid_clmns'] ?? 1 ) . ');" class="thumb ' . $m2_fitimg . '">';
 
 		$m2_bgimg_sz = $params['m2_bgimg_sz'] ?: 'full';
