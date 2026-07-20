@@ -472,7 +472,7 @@ function ss_setitem( $params ) {
 
 	$moditem  = '<!-- Start Grid Item -->';
 
-	$moditem .= '<div class="mod-grid-item '.$params['m2_bgimg'].'' . $txt_lt . ' ' . $m2_class . ' ' . ( ( $params['slidetype'] ?? '' ) === 'post' ? 'article-link' : '' ) . '" data-type="' . ( $params['slidetype'] ?? '' ) . '" data-button="' . esc_attr( $btnlnk ) . '" ' . $m2_id . ' data-linktype="' . ( ! empty( $params['m2_blocklink'] ) ? 'blocklink' : 'buttonlink' ) . '">
+	$moditem .= '<div class="mod-grid-item ' . $txt_lt . ' ' . $m2_class . ' ' . ( ( $params['slidetype'] ?? '' ) === 'post' ? 'article-link' : '' ) . '" data-type="' . ( $params['slidetype'] ?? '' ) . '" data-button="' . esc_attr( $btnlnk ) . '" ' . $m2_id . ' data-linktype="' . ( ! empty( $params['m2_blocklink'] ) ? 'blocklink' : 'buttonlink' ) . '">
 		<div class="mod-grid-item-pad">
 			<div class="article ' . ( $params['m2_txt_algnmnt'] ?? '' ) . '">';
 
