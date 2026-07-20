@@ -841,12 +841,12 @@ html .mod-m1 .mod-rowcnt-1>div .dp-contain {
 		margin: auto;
 	}
 
-	.mod-m2.mod-txt-lght .article p {
+	.mod-m2.mod-txt-lght .mod-grid-item p {
 		color: white;
 	}
 
 
-	.mod-m2 .article .thumb {
+	.mod-m2 .mod-grid-item .thumb {
 		background-position: center;
 		background-repeat: no-repeat;
 		-webkit-transition: background-color 0.3s ease;
@@ -856,30 +856,30 @@ html .mod-m1 .mod-rowcnt-1>div .dp-contain {
 		transition: background-color 0.3s ease;
 	}
 
-	.mod-m2 .article .thumb:has(h3) {
+	.mod-m2 .mod-grid-item .thumb:has(h3) {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 
 	}
 
-	.mod-m2 .article.thumb:has(h3) h3 {
+	.mod-m2 .mod-grid-item.thumb:has(h3) h3 {
 		position: Absolute;
 
 
 	}
 
 
-	.mod-m2 .article .thumb img {
+	.mod-m2 .mod-grid-item .thumb img {
 		width: 100%;
 	}
 
-	.mod-m2 .article .thumb:not(.fitimg) img {
+	.mod-m2 .mod-grid-item .thumb:not(.fitimg) img {
 		object-fit: cover;
 		height: 100%;
 	}
 
-	.mod-m2 .article .thumb.fitimg img {
+	.mod-m2 .mod-grid-item .thumb.fitimg img {
 		object-fit: contain;
 		height: 100%;
 	}
