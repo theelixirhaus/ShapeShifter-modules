@@ -14,15 +14,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
+        
       - name: Create plugin zip
         run: |
-          mkdir -p shapeshifter-modules
+          mkdir -p ../shapeshifter-modules
           rsync -r --exclude='.git' \
                    --exclude='.github' \
                    --exclude='*.zip' \
-                   ./ shapeshifter-modules/
+                   ./ ../shapeshifter-modules/
+          cd ..
           zip -r shapeshifter-modules.zip shapeshifter-modules/
+          mv shapeshifter-modules.zip $GITHUB_WORKSPACE/
 
       - name: Upload zip to release
         uses: softprops/action-gh-release@v2
