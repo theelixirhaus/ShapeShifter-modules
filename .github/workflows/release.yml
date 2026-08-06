@@ -1,0 +1,30 @@
+name: Build and Release Plugin
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create plugin zip
+        run: |
+          mkdir -p shapeshifter-modules
+          rsync -r --exclude='.git' \
+                   --exclude='.github' \
+                   --exclude='*.zip' \
+                   ./ shapeshifter-modules/
+          zip -r shapeshifter-modules.zip shapeshifter-modules/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: shapeshifter-modules.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
