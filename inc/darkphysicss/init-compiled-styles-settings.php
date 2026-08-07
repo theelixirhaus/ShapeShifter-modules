@@ -231,7 +231,8 @@ $styleoutput.= ':root{
 	 }
 }
 
-body.post-type-page{
+html:not(.wp-admin) body,
+ .editor-visual-editor{
 	font-family:var(--dp-font-primary);
 	color:'.$dp_site_fnt_clr_dk.';
 	background-color:'.$dp_site_clr.';
@@ -247,7 +248,7 @@ html .mod .mod-txt-lght{
 
 @media(min-width:'.$dp_desktopxl.'){
 
-	.dp-txt\:xl{
+	.dp-txt\:xtrabig{
 		font-size:var(--dp-txt-headline-xtrabig-xl);
 	}
 
@@ -256,7 +257,7 @@ html .mod .mod-txt-lght{
 
 @media(min-width:'.$dp_mobile_portrait.')and (max-width:'.$dp_desktopxl.'){
 
-	.dp-txt\:xl{
+	.dp-txt\:xtrabig{
 		font-size:var(--dp-txt-headline-xtrabig);
 	}
 
@@ -264,7 +265,7 @@ html .mod .mod-txt-lght{
 
 @media(max-width:'.$dp_mobile_portrait.'){
 
-	.dp-txt\:xl{
+	.dp-txt\:xtrabig{
 		font-size:var(--dp-txt-headline-xtrabig-mob);
 	}
 
