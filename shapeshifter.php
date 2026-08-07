@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'SS_PLUGIN_VERSION', '1.0.0' );
+define( 'SS_BASENAME',       plugin_basename( __FILE__ ) );
 
 $ss_ver = SS_PLUGIN_VERSION;
 if(isset($_GET['dev'])){
@@ -34,3 +35,33 @@ defined( 'SS_LICENSE_API_URL' ) || define( 'SS_LICENSE_API_URL', 'https://www.sh
 require_once SS_INC . 'class-shapeshifter.php';
 
 add_action( 'plugins_loaded', [ 'ShapeShifter', 'boot' ] );
+
+
+
+add_filter( 'pre_set_site_transient_update_plugins', 'ssm_check_for_update' );
+
+function ssm_check_for_update( $transient ) {
+    if ( empty( $transient->checked ) ) return $transient;
+
+    $response = wp_remote_get( 'https://www.shapeshifter-modules.com/shapeshifter-plugin-version.json' );
+    if ( is_wp_error( $response ) ) return $transient;
+
+    $data = json_decode( wp_remote_retrieve_body( $response ) );
+
+    if ( ! $data || ! isset( $data->version ) ) return $transient;
+
+    if ( version_compare( SS_PLUGIN_VERSION, $data->version, '<' ) ) {
+        $transient->response[ SS_BASENAME ] = (object) [
+            'slug'        => 'shapeshifter-modules',
+            'new_version' => $data->version,
+            'url'         => 'https://www.shapeshifter-modules.com/',
+            'package'     => $data->download_url,
+        ];
+    }
+
+    return $transient;
+}
+
+add_action( 'admin_init', function() {
+    delete_site_transient( 'update_plugins' );
+});
