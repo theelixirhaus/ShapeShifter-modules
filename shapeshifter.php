@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ShapeShifter Modules
  * Description: Consolidated ShapeShifter module library, DarkPhysiCSS framework settings, and Deluxe Block Editor enhancements.
- * Version:     1.0.20
+ * Version:     1.0.21
  * Author:      The Elixir Haus
  * Text Domain: shapeshifter
  * Requires at least: 6.4
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SS_PLUGIN_VERSION', '1.0.20' );
+define( 'SS_PLUGIN_VERSION', '1.0.21' );
 define( 'SS_BASENAME',       plugin_basename( __FILE__ ) );
 
 $ss_ver = SS_PLUGIN_VERSION;
