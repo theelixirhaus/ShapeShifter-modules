@@ -65,3 +65,29 @@ function ssm_check_for_update( $transient ) {
 add_action( 'admin_init', function() {
     delete_site_transient( 'update_plugins' );
 });
+
+
+//Prevent Meta Boxes panel in page editor from being collapsed
+add_action( 'enqueue_block_editor_assets', function () {
+ 
+    // Optional: only do this on the Page editor, not Posts too.
+    // Remove this block if you want it applied everywhere.
+    $screen = get_current_screen();
+    if ( $screen && 'page' !== $screen->post_type ) {
+        return;
+    }
+ 
+    $script = <<<JS
+    wp.domReady( function () {
+        if ( wp.data && wp.data.dispatch( 'core/preferences' ) ) {
+            wp.data.dispatch( 'core/preferences' ).set(
+                'core/edit-post',
+                'metaBoxesMainIsOpen',
+                true
+            );
+        }
+    } );
+    JS;
+ 
+    wp_add_inline_script( 'wp-edit-post', $script );
+}, 20 );
