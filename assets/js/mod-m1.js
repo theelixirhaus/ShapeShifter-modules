@@ -6,6 +6,9 @@
 	bleeder.closest('.mod-m1').addClass('has-bleed');
 
 	var bleederbox = bleeder.closest('.mod-m1');
+
+	$(bleederbox).wrap('<div class="mod-m1-bleederbox"></div>');
+
 	bleeder.find('.mod-contain').css('max-width',(bleeder.width()+ parseInt(bleeder.find('.mod-contain').css('padding-left'))));
 
 	var evenodd = bleeder.index();
@@ -30,7 +33,7 @@
 		$(window).resize(function(){
 				if($(window).width()>768){
 			
-					bleeder.find('.mod').width($(window).width() - bleeder.offset().left);
+					bleeder.find('.mod').width(bleeder.parent().find('>div:not(.bleed)').offset().left + bleeder.parent().find('>div:not(.bleed)').innerWidth());
 						}
 				else{
 					bleeder.find('.mod').width('auto');

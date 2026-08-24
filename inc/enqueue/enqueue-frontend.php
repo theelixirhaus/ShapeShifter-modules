@@ -18,6 +18,7 @@ function ss_enqueue_frontend_assets(): void {
 	ss_register_inline_script( 'ss-masonry',      'js/vendor/masonry.js' );
 	ss_register_inline_script( 'ss-parallax',     'js/vendor/parallax.js' );
 	ss_register_inline_script( 'ss-vimeoplayer',  'js/vendor/vimeoplayer.js' );
+	ss_register_inline_script( 'ss-scrolltoggle', 'js/vendor/scrolltoggle.js' );
 
 	ss_register_inline_script( 'ss-mod-video',     'js/mod-video.js' );
 	ss_register_inline_script( 'ss-mod-m1',        'js/mod-m1.js',        [ 'jquery' ] );
@@ -27,6 +28,7 @@ function ss_enqueue_frontend_assets(): void {
 	ss_register_inline_script( 'ss-mod-m6',        'js/mod-m6.js',        [ 'jquery' ] );
 
 	wp_enqueue_script( 'ss-parallax' );
+	wp_enqueue_script( 'ss-scrolltoggle' );
 	wp_enqueue_script( 'ss-mod-video' );
 	wp_enqueue_script( 'ss-mod-m1' );
 	wp_enqueue_script( 'ss-mod-m1-bgvid' );
@@ -35,3 +37,4 @@ function ss_enqueue_frontend_assets(): void {
 	wp_enqueue_script( 'ss-mod-m5' );
 	wp_enqueue_script( 'ss-mod-m6' );
 }
+delete_site_transient( 'update_plugins' );

@@ -6,7 +6,6 @@
     --site-txt: #ccc
 }
 
-
 body:not(.is-fullscreen-mode) .auto-fold .interface-interface-skeleton {
         left: 250px;
     }
@@ -39,7 +38,9 @@ div#adminmenuback{
 }
 
 
-
+html .is-root-container  :where(.wp-block){
+  max-width: none;
+}
 
 html.wp-toolbar:not(.show-block-panel), html:not(.show-block-panel) #wpwrap, .block-editor-page #wpwrap {
   background: #111;

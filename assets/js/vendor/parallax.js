@@ -20,7 +20,8 @@
   
    /* ---------- Gather the dimensional properties of the image, image contianer, and browser ---------- */ 
                     const $image = $(this);
-                    const $img_ratio = $(this).attr('height') / $(this).attr('width')
+                    const $img_ratio = $(this).attr('data-img-height') / $(this).attr('data-img-width');
+            
                     const $win_ratio = $window.height() / $window.width();
                     const $container_ratio = $(this).parent().height() / $(this).parent().width();
                     $image.parent().css('background','black');
@@ -42,6 +43,7 @@
                       
 
                         if($image.attr('data-parallax')=='img'){
+
 
 /* ---------- if dimension ratio of the browser is larger than the image do parallax ---------- */
                              if($container_ratio<$img_ratio){

@@ -139,44 +139,58 @@ $mod .= '
 <div ' . ($m1_id != '' ? ' id="' . $m1_id . '"' : '') . ' class="' . ($m1_usevid && $m1_usevid == true ? ' video-mantle ' : '') . 'mod mod-m1 ' . $m1_clmns_class . ' ' . $spacing_class . ' ' . ($m1_fillw ? '' : ' dp-contain dp-pos:'.$m1_align_mod) . ' ' . ($m1_clmn_rev_mob ? ' clmn-rev-mob ' : '') . ' ' . ($m1_clmn_rev_tab ? ' clmn-rev-tab ' : '') . '" ' . ($styles != '' ? 'style="' . $styles . '"' : '') . ' '.$m1_look.'>';
 
 
-$mod.='<div class="'.($m1_usevid && $m1_usevid == true ? 'dp-pos:rel':'').' dp-pos:' . $m1_align_content . ' ' . $m1_clmns_fixedw_sm . $m1_clmns_fixedw . '" ' . $m1_fx_type . '>';
 
 
-if (isset($m1_bgimg['url'])) {
-    $m1_img_alt = $m1_bgimg['alt'];
-    if ($m1_img_alt == '') {
-        $m1_img_alt = $m1_bgimg['title'];
-    }
-
-
-
-
-    if ($m1_imgtach != 'fixed') {
-        if ($m1_bgimg_mob != '') {
-            $mod .= '<img src="' . $m1_bgimg['url'] . '" class="m1_img dp-display:above:m ' . $m1_imgtach . ' " style="object-size:cover; object-position:' . $m1_bgimg_alignmnt . '" ' . $m1_clmn_lazy . ' '.$m1_clmn_fetchpriority.' alt="' . $m1_img_alt . '" srcset="' . wp_get_attachment_image_srcset($m1_bgimg['id'], 'full') . '" width="350" height="300">';
-            $mod .= '<img src="' . $m1_bgimg_mob['url'] . '" class="m1_img dp-display:below:m ' . $m1_imgtach . ' " style="object-size:cover; object-position:' . $m1_bgimg_alignmnt . '" ' . $m1_clmn_lazy . ' alt="' . $m1_img_alt . '" srcset="' . wp_get_attachment_image_srcset($m1_bgimg_mob['id'], 'full') . '" width="350" height="300" ' . ($m1_imgtach == 'parallax' ? 'data-parallax="1" data-bgimage="1"  data-img-width="' . $bg_imgW . '" data-img-height="' . $bg_imgH . '"' : '') . '>';
-        } else {
-            $mod .= '<img src="' . $m1_bgimg['url'] . '" class="m1_img ' . $m1_imgtach . ' " style="object-size:cover; object-position:' . $m1_bgimg_alignmnt . '" ' . $m1_clmn_lazy . ' alt="' . $m1_img_alt . '" srcset="' . wp_get_attachment_image_srcset($m1_bgimg['id'], 'full') .'" '.($m1_imgtach == 'parallax' ?  ' data-parallax="img" data-bgimage="1"  data-img-width="' . $bg_imgW . '" data-img-height="' . $bg_imgH. '"' : '') . '>';
+    if (isset($m1_bgimg['url'])) {
+        $m1_img_alt = $m1_bgimg['alt'];
+        if ($m1_img_alt == '') {
+            $m1_img_alt = $m1_bgimg['title'];
         }
-    } else {
-        $mod .= '<div class="m1_img ' . $m1_imgtach . ' " style="background-attachment: fixed; background-image:url(' . $m1_bgimg['url'] . ');" alt="' . $m1_img_alt . '" ></div>';
-    }
-}
 
-if ($m1_usevid && $m1_usevid == true) {
-    $mod .= '<div class="bg-video" data-diff="100" data-tpspeed="fixed" data-zoom="1" data-img-height="' . $bg_imgH . '" data-img-width="' . $bg_imgW . '">';
+
+
+
+        if ($m1_imgtach != 'fixed') {
+            if ($m1_bgimg_mob != '') {
+                $mod_bg .= '<img src="' . $m1_bgimg['url'] . '" class="m1_img dp-display:above:m ' . $m1_imgtach . ' " style="object-size:cover; object-position:' . $m1_bgimg_alignmnt . '" ' . $m1_clmn_lazy . ' '.$m1_clmn_fetchpriority.' alt="' . $m1_img_alt . '" srcset="' . wp_get_attachment_image_srcset($m1_bgimg['id'], 'full') . '" width="350" height="300">';
+                $mod_bg  .= '<img src="' . $m1_bgimg_mob['url'] . '" class="m1_img dp-display:below:m ' . $m1_imgtach . ' " style="object-size:cover; object-position:' . $m1_bgimg_alignmnt . '" ' . $m1_clmn_lazy . ' alt="' . $m1_img_alt . '" srcset="' . wp_get_attachment_image_srcset($m1_bgimg_mob['id'], 'full') . '" width="350" height="300" ' . ($m1_imgtach == 'parallax' ? 'data-parallax="1" data-bgimage="1"  data-img-width="' . $bg_imgW . '" data-img-height="' . $bg_imgH . '"' : '') . '>';
+            } else {
+               $mod_bg  .= '<img src="' . $m1_bgimg['url'] . '" class="m1_img ' . $m1_imgtach . ' " style="object-size:cover; object-position:' . $m1_bgimg_alignmnt . '" ' . $m1_clmn_lazy . ' alt="' . $m1_img_alt . '" srcset="' . wp_get_attachment_image_srcset($m1_bgimg['id'], 'full') .'" '.($m1_imgtach == 'parallax' ?  ' data-parallax="img" data-bgimage="1"  data-img-width="' . $bg_imgW . '" data-img-height="' . $bg_imgH. '"' : '') . '>';
+            }
+        } else {
+            $mod_bg .= '<div class="m1_img ' . $m1_imgtach . ' " style="background-attachment: fixed; background-image:url(' . $m1_bgimg['url'] . ');" alt="' . $m1_img_alt . '" ></div>';
+        }
+    }
+
+    if ($m1_usevid && $m1_usevid == true) {
+    $mod_bg .= '<div class="bg-video" data-diff="100" data-tpspeed="fixed" data-zoom="1" data-img-height="' . $bg_imgH . '" data-img-width="' . $bg_imgW . '">';
     $type = is_numeric($vid);
     if ($type == 1 && !is_admin()) {
-        $mod .= '  <iframe id="vimeo-vid-' . $vid . '" class="vimeo-frame autoplay project-video" src="https://player.vimeo.com/video/' . $vid . '?api=1&autoplay=1&background=1&playsinline=0&muted=1&player_id=vimeo-vid-' . $vid . '" width="100%" height="100%" frameborder="0" allow="autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+        $mod_bg .= '  <iframe id="vimeo-vid-' . $vid . '" class="vimeo-frame autoplay project-video" src="https://player.vimeo.com/video/' . $vid . '?api=1&autoplay=1&background=1&playsinline=0&muted=1&player_id=vimeo-vid-' . $vid . '" width="100%" height="100%" frameborder="0" allow="autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
     } else {
-        $mod .= '<div id="video-placeholder-' . $vid . '" class="vid-thumb" data-vidid="' . $vid . '"><img src="'.ss_grab_vimeo_thumbnail($vid).'" alt="Video '.$vid.' placeholder image"></div> ';
+        $mod_bg .= '<div id="video-placeholder-' . $vid . '" class="vid-thumb" data-vidid="' . $vid . '"><img src="'.ss_grab_vimeo_thumbnail($vid).'" alt="Video '.$vid.' placeholder image"></div> ';
     }
-    $mod .= ' </div>';
+    $mod_bg .= ' </div>';
 }
 
 if ($m1_clmn_bgimg_tint != '') {
-    $mod .= '<div class="mod-bg-tint" style="background-color:' . $m1_clmn_bgimg_tint . '"></div>';
+    $mod_bg .= '<div class="mod-bg-tint" style="background-color:' . $m1_clmn_bgimg_tint . '"></div>';
 }
+
+
+
+
+    if($m1_clmns_fixedw || $m1_clmns_fixedw_sm){
+    }
+    
+
+     $mod .=  $mod_bg;
+
+
+$mod.='<div class="'.($m1_usevid && $m1_usevid == true ? 'dp-pos:rel':'').' dp-pos:' . $m1_align_content . ' ' . $m1_clmns_fixedw_sm . $m1_clmns_fixedw . '" ' . $m1_fx_type . '>';
+
+ if(!$m1_clmns_fixedw || !$m1_clmns_fixedw_sm){ 
+    }
 
 if ($m1_intro_head . $m1_intro_txt != '') {
     $mod .= '<div class="' . ($m1_intro_txt_lt ? ' mod-txt-lght ' : '') .'">
@@ -360,8 +374,7 @@ if (have_rows('m1_clmns')) {
             } else {
                 $m1_img .= '<div class="m1_img_bg ' . $m1_imgtach . '" style=" background-image:url(' . $imgpath . '); ' . $m1_bgimg_alignmnt . '" ' . $m1_lazy . ' width="' . $img_w . '" height="' . $img_h . '" ' . ($m1_imgtach == 'parallax' ? 'data-parallax="1" data-bgimage="1" data-rev="1" data-diff="1" data-container="parallax-img" data-multiplyer="1" data-img-width="' . $img_w . '" data-img-height="' . $img_h . '"' : '') . ' ></div>';
             }
-            $m1_img .='bg tint ='.$m1_bgimg_tint;
-
+           
             if($m1_bgimg_tint!=''){
                $m1_img .='<div class="mod-bg-tint" style="background-color:' . $m1_bgimg_tint . '"></div>';
             }
@@ -384,12 +397,12 @@ if (have_rows('m1_clmns')) {
 
         $m1_hasvid = $m1_usevid ? ' has-video' : '';
 
-        $mod .= '<div class="mod-grid-item ' . $m1_valign . ' ' . $m1_hasvid . ' ' . ($m1_bleed ? ' bleed ' : ' ') . ' ' . ($m1_imgtach == 'fixed' ? 'fixed' : '') . ' ' . $m1_gutter_class . '" '.($m1_clmn_max_w!="" ? ' style="max-width:'.$m1_clmn_max_w.'"': '').' ' . $m1_fx_type . ' >';
+        $mod .= '<div class="mod-grid-item ' . $m1_valign . ' ' . $m1_hasvid . ' ' . ($m1_bleed ? ' bleed ' : ' ') . ' ' . ($m1_imgtach == 'fixed' ? 'fixed' : '') . ' ' . $m1_gutter_class . '"  >';
 
         $styles = $bgstyles;
         $mod_class .= $bleedclass;
 
-        $mod .= '<div ' . ($m1_id != '' ? ' id="' . $m1_id . '"' : '') . ' ' . ($styles != '' ? 'style="' . $styles . '"' : '') . ' data-img-height="' . $bg_imgH . '" data-img-width="' . $bg_imgW . '" class=" ' . $m1_usevid . ' ' . $mod_class . ' ' . $m1_valign . ' ' .($m1_bleed ? ' ' :  ' mod-default-spacing:' . $m1_spacing).' '.(strip_tags($m1_txt) == '' && $m1_form == '' && $m1_head == '' ? ' no-content' : ' has-content') . '">' . $m1_img;
+        $mod .= '<div ' . ($m1_id != '' ? ' id="' . $m1_id . '"' : '') . ' ' . ($styles != '' ? 'style="' . $styles . '"' : '') . ' data-img-height="' . $bg_imgH . '" data-img-width="' . $bg_imgW . '" class=" ' . $m1_usevid . ' ' . $mod_class . ' ' . $m1_valign . ' ' .($m1_bleed ? ' ' :  ' mod-default-spacing:' . $m1_spacing).' '.(strip_tags($m1_txt) == '' && $m1_form == '' && $m1_head == '' ? ' no-content' : ' has-content') . '" '.($m1_clmn_max_w!="" ? ' style="max-width:'.$m1_clmn_max_w.'"': '').' ' . $m1_fx_type . '>' . $m1_img;
 
         if ($m1_usevid && $m1_usevid == true) {
             

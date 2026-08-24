@@ -171,6 +171,13 @@
 }
 
 
+.mod-m2 .thumb.fitimg img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+
 .simpleParallax {
 	position: absolute;
 }
@@ -411,6 +418,14 @@ html .mod-m1 .mod-rowcnt-1>div .dp-contain {
 	.mod-m1.has-bleed .bleed,
 	.mod-m1.has-bleed .bleed >div {
 			width: 100% !important;
+			overflow:hidden;
+
+	}
+
+	.mod-m1.has-bleed .bleed img {
+			position:relative;
+			width:100%;
+			height:auto;
 
 	}
 
@@ -484,18 +499,26 @@ html .mod-m1 .mod-rowcnt-1>div .dp-contain {
 	
 	
 		}
+
+		.mod-m1.has-bleed .bleed>div{
+			position: absolute !important;
+			bottom: 0;
+			top: 0;
+
+		}
 	
 	
 		.mod-m1.has-bleed .bleed:nth-child(odd)>div {
-			position: absolute !important;
 			right: 0;
-			justify-content: flex-end
+			justify-content: flex-end;
+			
 		}
 	
 	
 		.has-bleed .bleed:nth-child(even)>div {
 			right: 0;
-			justify-content: flex-start
+			justify-content: flex-start;
+			
 		}
 		
 	}
@@ -513,6 +536,20 @@ html .mod-m1 .mod-rowcnt-1>div .dp-contain {
 		width: 100%;
 		position: relative;
 	}
+
+	.ss-slideshow {
+		position:Relative;
+
+	}
+
+	.ss-slideshow .slide-view,
+	.ss-slideshow .owl-stage-outer,
+	.ss-slideshow .ss-slides,
+	.ss-slideshow .owl-stage {
+		height:100%;
+	}
+
+
 
 	.ss-slideshow .ss-slide-view {
 		width: 100%;

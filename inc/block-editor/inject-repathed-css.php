@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-add_action( 'enqueue_block_editor_assets', 'ss_inject_repathed_editor_css', 50 );
+add_action( 'after_setup_theme', 'ss_inject_repathed_editor_css', 50 );
 
 function ss_inject_repathed_editor_css(): void {
 	if ( ! function_exists( 'get_field' ) ) {
@@ -29,10 +29,13 @@ function ss_inject_repathed_editor_css(): void {
 		return;
 	}
 
+
 	wp_enqueue_style(
 		'ss-block-editor-repathed',
 		SS_CSS_Repather::get_cache_file_url( $source_url ),
 		[],
 		(string) filemtime( $cache_file )
 	);
+
+
 }
