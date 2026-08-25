@@ -289,12 +289,9 @@ if (have_rows('m1_clmns')) {
             $m1_gutter_class .= ' dp-grid:' . $m1_clmn_w_mob . ':s ';
         }
 
-        add_filter('acf_the_content', 'wpautop');
         if ($m1_noformat) {
-            remove_filter('acf_the_content', 'wpautop');
-            $m1_txt = do_shortcode(get_sub_field('m1_txt'));
+            $m1_txt = do_shortcode(get_sub_field('m1_txt', false, false));
             $m1_txt = do_blocks($m1_txt);
-            $m1_txt = str_replace(['<br/>', '<p>', '</p>', '<p> </p>'], '', $m1_txt);
             $m1_class .= ' noformat ';
         } else {
             $m1_txt = ss_add_pclass(apply_filters('the_content', get_sub_field('m1_txt')), '');

@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-add_action( 'after_setup_theme', 'ss_inject_repathed_editor_css', 50 );
+add_action( 'enqueue_block_editor_assets', 'ss_inject_repathed_editor_css', 50 );
 
 function ss_inject_repathed_editor_css(): void {
 	if ( ! function_exists( 'get_field' ) ) {

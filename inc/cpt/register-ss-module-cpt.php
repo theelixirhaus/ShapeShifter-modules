@@ -22,7 +22,7 @@ function ss_register_module_cpt(): void {
 				'not_found'          => __( 'No modules found', 'shapeshifter' ),
 				'not_found_in_trash' => __( 'No modules in trash', 'shapeshifter' ),
 			],
-			'public'             => false,
+			'public'             => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'show_in_rest'       => true,
@@ -33,7 +33,7 @@ function ss_register_module_cpt(): void {
 			'rewrite'            => [ 'slug' => 'ss_module', 'with_front' => false ],
 			'capability_type'    => 'post',
 			'hierarchical'       => false,
-			'publicly_queryable' => false,
+			'publicly_queryable' => true,
 		]
 	);
 }

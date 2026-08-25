@@ -285,11 +285,10 @@ if (!$m2_grid) {
             $params['m2_use_h1'] = get_sub_field('m2_use_h1');
             $m2_noformat = get_sub_field('m2_noformat');
 
-            add_filter('acf_the_content', 'wpautop');
+
             if ($m2_noformat) {
-                $m2_txt = get_sub_field('m2_txt');
+                $m2_txt = get_sub_field('m2_txt',false,false);
                 $m2_txt = do_blocks($m2_txt);
-                $m2_txt = str_replace(['<br/>', '<p>', '</p>', '<p> </p>'], '', $m2_txt);
                 $params['m2_txt'] = $m2_txt;
             } else {
                 $params['m2_txt'] = get_sub_field('m2_txt');
