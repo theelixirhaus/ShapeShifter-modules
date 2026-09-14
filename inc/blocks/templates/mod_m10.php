@@ -14,7 +14,7 @@
     }
 
 
-	echo'<div class="mod mod-m10 '.$m10_class.' '.$m10_look.'" data-mod="'.$modid.'" '.$m10_fx_type.'>';
+	echo'<div class="mod mod-m10 '.$m10_class.' '.$m10_look.'" data-mod="'.$m10_id.'" '.$m10_fx_type.'>';
 	if($m10_id !=''){
 
     	echo ss_get_content($m10_id);

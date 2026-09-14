@@ -21,6 +21,37 @@
                 "endpoint": 0,
                 "selected": 0
             },
+           
+             
+            {
+                "key": "field_ss_686e7bb7175c0",
+                "label": "Eyebrow Text",
+                "name": "m1_intro_eyebrow",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_ss_686e7bb7175b0",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+
             {
                 "key": "field_ss_686e7bb7175d0",
                 "label": "Intro Headline",
@@ -41,6 +72,27 @@
                 "prepend": "",
                 "append": ""
             },
+
+             {
+                "key": "field_ss_686e7bb7175b0",
+                "label": "Add Eyebrow Text to Headline",
+                "name": "m1_intro_use_eyebrow",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
             {
                 "key": "field_ss_686e7bb7175d7",
                 "label": "Set as H1 Tag",
@@ -51,7 +103,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
@@ -103,6 +155,7 @@
                 "button_label": "Add Row",
                 "rows_per_page": 20,
                 "sub_fields": [
+
                     {
                         "key": "field_ss_686e7bb71f5f3",
                         "label": "Content",
@@ -131,6 +184,35 @@
                         "selected": 0
                     },
                     {
+                        "key": "field_ss_686e7bb71f5de",
+                        "label": "Eyebrow Text",
+                        "name": "m1_eyebrow",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_ss_686e7bb71f5ee",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+
+                    {
                         "key": "field_ss_686e7bb71f5fe",
                         "label": "Headline",
                         "name": "m1_head",
@@ -152,6 +234,26 @@
                         "parent_repeater": "field_ss_686e7bb7175e5"
                     },
                     {
+                        "key": "field_ss_686e7bb71f5ee",
+                        "label": "Add Eyebrow Text to Headline",
+                        "name": "m1_use_eyebrow",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
                         "key": "field_ss_686e7bb71f606",
                         "label": "Set as H1 Tag",
                         "name": "m1_use_h1",
@@ -161,7 +263,7 @@
                         "required": 0,
                         "conditional_logic": 0,
                         "wrapper": {
-                            "width": "",
+                            "width": "50",
                             "class": "",
                             "id": ""
                         },
@@ -2947,6 +3049,34 @@
                 "selected": 0
             },
             {
+                "key": "field_ss_64554a79eff57",
+                "label": "Eyebrow Text",
+                "name": "m2_intro_eyebrow",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_ss_64554a79eff47",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
                 "key": "field_ss_64554a79eff67",
                 "label": "Intro Headline",
                 "name": "m2_intro_head",
@@ -2967,6 +3097,26 @@
                 "append": ""
             },
             {
+                "key": "field_ss_64554a79eff47",
+                "label": "Add Eyebrow Text to Headline",
+                "name": "m2_intro_use_eyebrow",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
                 "key": "field_ss_64554a79eff6f",
                 "label": "Set as H1 Tag",
                 "name": "m2_intro_use_h1",
@@ -2976,7 +3126,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
@@ -5699,6 +5849,34 @@
                 "selected": 0
             },
             {
+                "key": "field_ss_6455569144cc6",
+                "label": "Eyebrow Text",
+                "name": "m3_intro_eyebrow",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_ss_6455569144cb6",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
                 "key": "field_ss_6455569144cd6",
                 "label": "Headline",
                 "name": "m3_intro_head",
@@ -5719,6 +5897,26 @@
                 "append": ""
             },
             {
+                "key": "field_ss_6455569144cb6",
+                "label": "Add Eyebrow Text to Headline",
+                "name": "m3_intro_use_eyebrow",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
                 "key": "field_ss_6455569144ce3",
                 "label": "Set as H1 Tag",
                 "name": "m3_intro_use_h1",
@@ -5728,7 +5926,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
@@ -5799,6 +5997,35 @@
                         "parent_repeater": "field_ss_6455569144cf4"
                     },
                     {
+                        "key": "field_ss_6455569264813",
+                        "label": "Eyebrow Text",
+                        "name": "m3_eyebrow",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_ss_6455569264803",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_ss_6455569144cf4"
+                    },
+                    {
                         "key": "field_ss_6455569264823",
                         "label": "Headline",
                         "name": "m3_head",
@@ -5819,6 +6046,27 @@
                         "maxlength": "",
                         "readonly": 0,
                         "disabled": 0,
+                        "parent_repeater": "field_ss_6455569144cf4"
+                    },
+                    {
+                        "key": "field_ss_6455569264803",
+                        "label": "Add Eyebrow Text to Headline",
+                        "name": "m3_use_eyebrow",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
                         "parent_repeater": "field_ss_6455569144cf4"
                     },
                     {
@@ -7441,6 +7689,34 @@
                 "selected": 0
             },
             {
+                "key": "field_ss_658dc0c4e0cb6",
+                "label": "Eyebrow Text",
+                "name": "m4_intro_eyebrow",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_ss_658dc0c4e0ca6",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
                 "key": "field_ss_658dc0c4e0cc6",
                 "label": "Intro Headline",
                 "name": "m4_intro_head",
@@ -7461,22 +7737,21 @@
                 "append": ""
             },
             {
-                "key": "field_ss_68276f3c31a05",
-                "label": "Unique ID for this module",
-                "name": "m4_id",
+                "key": "field_ss_658dc0c4e0ca6",
+                "label": "Add Eyebrow Text to Headline",
+                "name": "m4_intro_use_eyebrow",
                 "aria-label": "",
-                "type": "text",
+                "type": "true_false",
                 "instructions": "",
-                "required": 1,
+                "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
                 "default_value": "",
                 "maxlength": "",
-                "allow_in_bindings": 1,
                 "placeholder": "",
                 "prepend": "",
                 "append": ""
@@ -7491,7 +7766,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
@@ -7520,6 +7795,27 @@
                 "media_upload": 1,
                 "default_value": "",
                 "delay": 0
+            },
+            {
+                "key": "field_ss_68276f3c31a05",
+                "label": "Unique ID for this module",
+                "name": "m4_id",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
             },
             {
                 "key": "field_ss_658db3e89bcc2",
@@ -8479,6 +8775,34 @@
                 "selected": 0
             },
             {
+                "key": "field_ss_68350a6c8421f",
+                "label": "Eyebrow Text",
+                "name": "m5_intro_eyebrow",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_ss_68350a6c8420f",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
                 "key": "field_ss_68350a6c8422f",
                 "label": "Intro Headline",
                 "name": "m5_intro_head",
@@ -8500,6 +8824,27 @@
                 "append": ""
             },
             {
+                "key": "field_ss_68350a6c8420f",
+                "label": "Add Eyebrow Text to Headline",
+                "name": "m5_intro_use_eyebrow",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+
+            {
                 "key": "field_ss_68350c4f149d8",
                 "label": "Set as H1 Tag",
                 "name": "m5_intro_use_h1",
@@ -8509,7 +8854,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
@@ -9492,6 +9837,34 @@
                 "selected": 0
             },
             {
+                "key": "field_ss_645558721600d",
+                "label": "Eyebrow Text",
+                "name": "m6_intro_eyebrow",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_ss_645558721500d",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
                 "key": "field_ss_645558721601d",
                 "label": "Intro Headline",
                 "name": "m6_intro_head",
@@ -9512,6 +9885,46 @@
                 "maxlength": ""
             },
             {
+                "key": "field_ss_645558721500d",
+                "label": "Add Eyebrow Text to Headline",
+                "name": "m6_intro_use_eyebrow",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_ss_6455587216023",
+                "label": "Set as H1 Tag",
+                "name": "m6_intro_use_h1",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 0,
+                "message": "",
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
                 "key": "field_ss_6455587216030",
                 "label": "Intro Text",
                 "name": "m6_intro_txt",
@@ -9530,26 +9943,6 @@
                 "maxlength": "",
                 "rows": "",
                 "new_lines": "br"
-            },
-            {
-                "key": "field_ss_6455587216023",
-                "label": "Set as H1 Tag",
-                "name": "m6_intro_use_h1",
-                "aria-label": "",
-                "type": "true_false",
-                "instructions": "",
-                "required": false,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": 0,
-                "message": "",
-                "ui": 0,
-                "ui_on_text": "",
-                "ui_off_text": ""
             },
             {
                 "key": "field_ss_6830d58d71f3e",
@@ -10568,6 +10961,34 @@
                 "ui_off_text": ""
             },
             {
+                "key": "field_ss_64555944a5aa8",
+                "label": "Eyebrow Text",
+                "name": "m7_intro_eyebrow",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_ss_64555944a4aa8",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
                 "key": "field_ss_64555944a5ab8",
                 "label": "Menu Section",
                 "name": "m7_intro_head",
@@ -10586,6 +11007,46 @@
                 "prepend": "",
                 "append": "",
                 "maxlength": ""
+            },
+            {
+                "key": "field_ss_64555944a4aa8",
+                "label": "Add Eyebrow Text to Headline",
+                "name": "m7_intro_use_eyebrow",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+             {
+                "key": "field_ss_64555944a5ab6",
+                "label": "Set as H1 Tag",
+                "name": "m7_intro_use_h1",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 0,
+                "message": "",
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
             },
             {
                 "key": "field_ss_64555944a5ac6",

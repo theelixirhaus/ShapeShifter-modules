@@ -17,6 +17,10 @@ $m2_grid_slider = get_field('m2_grid_slider');
 
 // Content
 $m2_intro_head = get_field('m2_intro_head');
+$m2_intro_eyebrow = get_field('m2_intro_eyebrow');
+if(get_field('m2_intro_use_eyebrow') && $m2_intro_eyebrow!=''){
+    $m2_intro_head = '<span class="mod-intro-eyebrow">'.$m2_intro_eyebrow.'</span>'.$m2_intro_head;
+}
 $m2_intro_use_h1 = get_field('m2_intro_use_h1');
 $m2_intro_txt = get_field('m2_intro_txt');
 $m2_pageslides_auto = get_field('m2_pageslides_auto');
@@ -187,13 +191,13 @@ if ($m2_intro_head . $m2_intro_txt != '') {
             $m2_intro_head = '<h2 class="' . $m2_intro_head_sz . '">' . $m2_intro_head . '</h2>';
         }
         
-        $mod .= '<div class="mod-intro-title" '.($m2_intro_head_max_w? 'style="max-width:'.$m2_intro_head_max_w.'"':'').'>' . $m2_intro_head . '</div>';
+        $mod .= '<div class="mod-intro-title">' . $m2_intro_head . '</div>';
         $introPadTop = ' dp-pad:10px:top ';
     }
 
     
     if ($m2_intro_txt != '') {
-        $mod .= '<div class="mod-txt mod-intro-txt'.$introPadTop. $m2_intro_txt_sz . ' ' . $m2_clmns_fixedw_sm . '"  '.($m2_intro_txt_max_w? 'style="max-width:'.$m2_intro_txt_max_w.'"':'').'>' . ss_add_pclass(apply_filters('the_content', $m2_intro_txt), $m2_intro_txt_sz) . '</div>';
+        $mod .= '<div class="mod-txt mod-intro-txt'.$introPadTop. $m2_intro_txt_sz . ' ' . $m2_clmns_fixedw_sm . '" >' . ss_add_pclass(apply_filters('the_content', $m2_intro_txt), $m2_intro_txt_sz) . '</div>';
     }
     
     $mod .= '</div></div>';
@@ -206,11 +210,11 @@ if (!$m2_grid) {
     $m2_grid_slider_show_arrows = get_field('m2_grid_slider_show_arrows') == 1 ? 'true' : 'false';
     $m2_grid_slider_speed = get_field('m2_grid_slider_speed') ?: 9000;
     $m2_autoslide = $m2_autoslide ? 'true' : 'false';
-    $dots = 'true';
+   
     $m2_slidecnt = "0";
 
     if (is_array(get_field('m2_slides')) && count(get_field('m2_slides')) < 2) {
-        $dots = 'false';
+        $m2_grid_slider_show_dots  = 'false';
         $m2_slidecnt = count(get_field('m2_slides'));
     }
 
@@ -223,7 +227,7 @@ if (!$m2_grid) {
                 autoplayTimeout: {$m2_grid_slider_speed},
                 autoplayHoverPause: ".($m2_slider_pause_on_hov? 'true' : 'false').",
                 nav: {$m2_grid_slider_show_arrows},
-                dots: {$dots},
+                dots: {$m2_grid_slider_show_dots},
                 ".($m2_slidev == 'vert'? 
                     "animateOut: 'slideOutUp',
                     animateIn: 'slideInUp'," : "" ) ."
@@ -643,15 +647,16 @@ if ($m2_grid) {
 }
 
 
-       $mod .= '</div>';/* End Content container */
+    
     
 
 if ($m2_txt_post != '') {
-    $mod .= '<div class="dp-pad:25pc:bot:xs dp-pad:100px:top:xs dp-pad:50pc:bot dp-pad:50pc:top post-text ' . $m2_align_content . ' ' . $txt_lt . ' mod-default-spacing:' . $m2_spacing . '">
+    $mod .= '<div class="mod-post-text ' . $m2_align_content . '  mod-default-spacing:top-sides">
                 <div class="mod-txt">' . ss_add_pclass(apply_filters('the_content', $m2_txt_post), null) . '</div>
             </div>';
 }
 
+   $mod .= '</div>';/* End Content container */
 $mod .= '</div>
 
 

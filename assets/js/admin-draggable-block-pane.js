@@ -104,7 +104,6 @@ $('#wpbody').click(function(){
                         var acf_cus_label= $(this).parent().parent().find('.acf-input-wrap input').val();
                          var acf_cus_label_prepend= (acf_cus_label_prepend[0].toUpperCase())+': ';
                        
-                          console.log('cusotmize name'+ acf_cus_label);
                           if(acf_cus_label!='' && acf_header.length>0){
                           
                               if(acf_header.find('.alttitle').length<1){

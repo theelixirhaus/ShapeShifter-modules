@@ -3,6 +3,10 @@ $styles = '';
 
 // Content
 $m5_intro_head = get_field('m5_intro_head');
+$m5_intro_eyebrow = get_field('m5_intro_eyebrow');
+if(get_field('m5_intro_use_eyebrow') && $m5_intro_eyebrow!=''){
+    $m5_intro_head = '<span class="mod-intro-eyebrow">'.$m5_intro_eyebrow.'</span>'.$m5_intro_head;
+}
 $m5_intro_use_h1 = get_field('m5_intro_use_h1');
 $m5_schema = get_field('m5_schema');
 $m5_intro_txt = get_field('m5_intro_txt');

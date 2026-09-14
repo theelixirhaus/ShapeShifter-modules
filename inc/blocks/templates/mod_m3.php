@@ -3,6 +3,10 @@ $styles = '';
 
 // Content
 $m3_intro_head = get_field('m3_intro_head');
+$m3_intro_eyebrow = get_field('m3_intro_eyebrow');
+if(get_field('m3_intro_use_eyebrow') && $m3_intro_eyebrow!=''){
+    $m3_intro_head = '<span class="mod-intro-eyebrow">'.$m3_intro_eyebrow.'</span>'.$m3_intro_head;
+}
 $m3_intro_use_h1 = get_field('m3_intro_use_h1');
 $m3_intro_txt = get_field('m3_intro_txt');
 
@@ -100,7 +104,7 @@ if ($m3_clmn_gutter_mob != '') {
 
 $htag = get_field('m3_use_h1') ? 'h1' : 'h2';
 
-$mod .= '<div ' . ($styles != '' ? 'style="' . $styles . '"' : '') . $parallax . ' class="' . $m3_mod_class . ' '.$m3_class_container . ' '.($m3_fillw ? '' : 'dp-contain dp-pos:' . $m3_align_content).'" '.$m3_look.' '.$m3_fx_type.'>';
+$mod .= '<div ' . ($styles != '' ? 'style="' . $styles . '"' : '') . $parallax . ' class="' . $m3_mod_class . ' '.$m3_class_container . ' '.($m3_fillw ?  'dp-contain dp-pos:' . $m3_align_content:'').'" '.$m3_look.' '.$m3_fx_type.'>';
 $mod .= '<div class="'. $m3_class_container .'" >';
 
 if ($m3_intro_head . $m3_intro_txt != '') {
@@ -141,6 +145,10 @@ if (have_rows('m3_rows')) {
     
     while (have_rows('m3_rows')) : the_row();
         $m3_head = get_sub_field('m3_head');
+        $m3_eyebrow = get_sub_field('m3_eyebrow');
+        if(get_sub_field('m3_use_eyebrow') && $m3_eyebrow!=''){
+            $m3_head = '<span class="mod-intro-eyebrow">'.$m3_eyebrow.'</span>'.$m3_head;
+        }
         $m3_txt = get_sub_field('m3_txt');
         $m3_txt_lt = get_sub_field('m3_txt_lt');
         $m3_img_txt = get_sub_field('m3_img_content');
@@ -166,8 +174,8 @@ if (have_rows('m3_rows')) {
         $rowside = 'clmnl';
 
       
- $mod.='<div class="mod-contain  mod-default-spacing:' . $m3_spacing .' '.$m3_clmn_gutter.' '.$m3_clmn_gutter_tab.'  '.$m3_clmn_gutter_mob.'">';
-        $mod .= '<section class="m3-row dp-flex:valign:mid dp-grid:fit:2:m  ' . $m3_clmn_size . ' '.($m3_bleed!=''?' bleed ':'').$m3_bleed.' '. $m3_class . ' ' . ' ' . ($m3_row_algnmnt ? 'dp-flex:valign:mid' : '') . ' ' . ($rowcnt < ($rowsttl - 1) ? '' : '') . ' ' . $m3_clmns_fixedw_sm . '   '.$m3_clmns_fixedw_sm .($m3_fillw ? $m3_clmns_fixedw.'dp-pos:' .$m3_align_content: '') .'" '.$m3_fx_type.'>';
+ $mod.='<div class="mod-contain  mod-default-spacing:' . $m3_spacing .' ">';
+        $mod .= '<section class="m3-row dp-flex:valign:mid dp-grid:fit:2:m  ' . $m3_clmn_size . ' '.($m3_bleed!=''?' bleed ':'').$m3_bleed.' '. $m3_class . ' ' . ' ' . ($m3_row_algnmnt ? 'dp-flex:valign:mid' : '') . ' ' . ($rowcnt < ($rowsttl - 1) ? '' : '') . ' ' . $m3_clmns_fixedw_sm . '   '.$m3_clmns_fixedw_sm .($m3_fillw ? $m3_clmns_fixedw.' dp-pos:' .$m3_align_content: '') .' '.$m3_clmn_gutter.' '.$m3_clmn_gutter_tab.'  '.$m3_clmn_gutter_mob.'" '.$m3_fx_type.'>';
         $rowside = 'clmnr';
 
 

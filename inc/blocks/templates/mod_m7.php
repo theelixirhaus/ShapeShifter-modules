@@ -3,6 +3,11 @@ $styles = '';
 
 // Content
 $m7_intro_head = get_field('m7_intro_head');
+$m7_intro_eyebrow = get_field('m7_intro_eyebrow');
+if(get_field('m7_intro_use_eyebrow') && $m7_intro_eyebrow!=''){
+    $m7_intro_head = '<span class="mod-intro-eyebrow">'.$m7_intro_eyebrow.'</span>'.$m7_intro_head;
+}
+$m7_intro_use_h1 = get_field('m7_intro_use_h1');
 $m7_intro_txt = get_field('m7_intro_txt');
 $m7_align_img = get_field('m7_align_img');
 $m7_alternate = get_field('m7_alternate') ? ' clmn-alt ' : '';

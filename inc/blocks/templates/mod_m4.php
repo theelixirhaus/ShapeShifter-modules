@@ -7,7 +7,10 @@ $m4_intro_head = get_field('m4_intro_head');
 $m4_id = get_field('m4_id');
 $m4_intro_use_h1 = get_field('m4_intro_use_h1');
 $m4_intro_txt = get_field('m4_intro_txt');
-$m4_head = get_field('m4_head');
+$m4_intro_eyebrow = get_field('m4_intro_eyebrow');
+if(get_field('m4_intro_use_eyebrow') && $m4_intro_eyebrow!=''){
+    $m4_intro_head = '<span class="mod-intro-eyebrow">'.$m4_intro_eyebrow.'</span>'.$m4_intro_head;
+}
 $m4_txt = get_field('m4_txt');
 
 // Style

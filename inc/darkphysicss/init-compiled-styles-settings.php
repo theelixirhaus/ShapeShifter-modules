@@ -99,7 +99,7 @@ $styleoutput.= ':root{
 
 	/* Paragraph Line Height and Margin */
 	 --dp-p-lh: '.($dp_p_lh!=''? $dp_p_lh :"1.2em").';
-	 --dp-h-lh:'.($dp_p_lh!=''? $dp_p_lh :"1.3em").';
+	 --dp-h-lh:'.($dp_h_lh!=''? $dp_h_lh :"1.3em").';
 	 --dp-p-marg:'.($dp_p_lh!=''? $dp_p_lh :"26px").';
 
 

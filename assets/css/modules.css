@@ -216,6 +216,10 @@ html .mod .mod-sz-fill {
 	width: 100%
 }
 
+.mod .mod-intro-eyebrow{
+	display:block;
+}
+
 .mod .mod-intro-header .mod-head-pos{
 	position:relative;
 	overflow: hidden;
@@ -281,15 +285,11 @@ html .m1_img {
 	z-index: 1;
 	left: 0;
 	top: 0;
+	overflow: hidden;
 }
 
 .mod.mod-m1 .mod-txt h2 {
 	padding-bottom: calc(var(t-site-padding)/3)
-}
-
-.mod.mod-m1 .mod-txt ul {
-	margin-top: 0;
-	margin-bottom: 0;
 }
 
 
@@ -478,7 +478,7 @@ html .mod-m1 .mod-rowcnt-1>div .dp-contain {
 	
 	
 		.mod-m1.has-bleed,
-		.mod-m1.has-bleed * {
+		.mod-m1.has-bleed *:not(.m1_img) {
 			overflow: visible;
 			clear: both;
 	

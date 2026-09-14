@@ -4,6 +4,10 @@ $m6_txt_lt = '';
 
 // Content
 $m6_intro_head = get_field('m6_intro_head');
+$m6_intro_eyebrow = get_field('m6_intro_eyebrow');
+if(get_field('m6_intro_use_eyebrow') && $m6_intro_eyebrow!=''){
+    $m6_intro_head = '<span class="mod-intro-eyebrow">'.$m6_intro_eyebrow.'</span>'.$m6_intro_head;
+}
 $m6_intro_use_h1 = get_field('m6_intro_use_h1');
 $m6_intro_txt = get_field('m6_intro_txt');
 $m6_height = get_field('m6_height');

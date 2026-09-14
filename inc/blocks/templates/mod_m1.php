@@ -6,6 +6,12 @@ $m1_fx_type = '';
 
 // Content
 $m1_intro_head = get_field('m1_intro_head');
+$m1_intro_eyebrow = get_field('m1_intro_eyebrow');
+if(get_field('m1_intro_use_eyebrow') && $m1_intro_eyebrow!=''){
+    $m1_intro_head = '<span class="mod-intro-eyebrow">'.$m1_intro_eyebrow.'</span>'.$m1_intro_head;
+}
+
+
 $m1_intro_use_h1 = get_field('m1_intro_use_h1');
 $m1_intro_txt = get_field('m1_intro_txt');
 
@@ -129,6 +135,7 @@ if ($m1_clmn_size != '') {
 
 
 $mod = '';
+$mod_bg='';
 
 if ($m1_hrt) {
     $mod .= '<div class="dp-contain dp-pos:cntr dp-pad:15px:rt dp-pad:15px:lt"><hr class="section-rule"></div>';
@@ -137,6 +144,7 @@ if ($m1_hrt) {
 $mod .= '
 <!-- Start Columned Text Module -->
 <div ' . ($m1_id != '' ? ' id="' . $m1_id . '"' : '') . ' class="' . ($m1_usevid && $m1_usevid == true ? ' video-mantle ' : '') . 'mod mod-m1 ' . $m1_clmns_class . ' ' . $spacing_class . ' ' . ($m1_fillw ? '' : ' dp-contain dp-pos:'.$m1_align_mod) . ' ' . ($m1_clmn_rev_mob ? ' clmn-rev-mob ' : '') . ' ' . ($m1_clmn_rev_tab ? ' clmn-rev-tab ' : '') . '" ' . ($styles != '' ? 'style="' . $styles . '"' : '') . ' '.$m1_look.'>';
+
 
 
 
@@ -177,14 +185,9 @@ if ($m1_clmn_bgimg_tint != '') {
     $mod_bg .= '<div class="mod-bg-tint" style="background-color:' . $m1_clmn_bgimg_tint . '"></div>';
 }
 
-
-
-
-    if($m1_clmns_fixedw || $m1_clmns_fixedw_sm){
-    }
-    
-
+if(isset($mod_bg) && !empty($mod_bg)){
      $mod .=  $mod_bg;
+}
 
 
 $mod.='<div class="'.($m1_usevid && $m1_usevid == true ? 'dp-pos:rel':'').' dp-pos:' . $m1_align_content . ' ' . $m1_clmns_fixedw_sm . $m1_clmns_fixedw . '" ' . $m1_fx_type . '>';
@@ -236,7 +239,11 @@ if (have_rows('m1_clmns')) {
         $m1_nomarg = get_sub_field('m1_nomarg');
         $m1_nopad = get_sub_field('m1_nopad');
         $m1_pos = get_sub_field('m1_pos');
-        $m1_head = get_sub_field('m1_head');
+        $m1_head = get_sub_field('m1_head');        
+        $m1_eyebrow = get_sub_field('m1_eyebrow');
+        if(get_sub_field('m1_use_eyebrow') && $m1_eyebrow!=''){
+            $m1_head = '<span class="mod-intro-eyebrow">'. $m1_eyebrow.'</span>'.$m1_head;
+        }
         $m1_head_sz = get_sub_field('m1_head_sz');
         $m1_p_sz = get_sub_field('m1_p_sz');
         $m1_txt_algnmnt = get_sub_field('m1_txt_algnmnt');
