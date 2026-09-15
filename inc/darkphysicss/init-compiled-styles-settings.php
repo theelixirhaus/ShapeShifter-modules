@@ -98,9 +98,9 @@ $styleoutput.= ':root{
 
 
 	/* Paragraph Line Height and Margin */
-	 --dp-p-lh: '.($dp_p_lh!=''? $dp_p_lh :"1.2em").';
+	 --dp-p-lh: '.($dp_p_lh!=''? $dp_p_lh :"1.3em").';
 	 --dp-h-lh:'.($dp_h_lh!=''? $dp_h_lh :"1.3em").';
-	 --dp-p-marg:'.($dp_p_lh!=''? $dp_p_lh :"26px").';
+	 --dp-p-marg:'.($dp_p_lh!=''? $dp_p_lh :"1.3em").';
 
 
 	/* Round Corner Default Bezier */
@@ -245,6 +245,13 @@ html .mod .mod-contain-sm{
 html .mod .mod-txt-lght{
 	color:'.$dp_site_fnt_clr_lt.';
 }
+
+html .mod .mod-txt p + *,
+html .mod .slide-content p + * {
+	margin-top:var(--dp-p-marg);
+}
+
+
 
 @media(min-width:'.$dp_desktopxl.'){
 
