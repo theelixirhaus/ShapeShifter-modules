@@ -104,7 +104,7 @@ if ($m3_clmn_gutter_mob != '') {
 
 $htag = get_field('m3_use_h1') ? 'h1' : 'h2';
 
-$mod .= '<div ' . ($styles != '' ? 'style="' . $styles . '"' : '') . $parallax . ' class="' . $m3_mod_class . ' '.$m3_class_container . ' '.($m3_fillw ?  'dp-contain dp-pos:' . $m3_align_content:'').'" '.$m3_look.' '.$m3_fx_type.'>';
+$mod .= '<div ' . ($styles != '' ? 'style="' . $styles . '"' : '') . $parallax . ' class="' . $m3_mod_class . ' '.$m3_class_container . ' '.($m3_fillw ?  '' : 'dp-contain dp-pos:' . $m3_align_content).'" '.$m3_look.' '.$m3_fx_type.'>';
 $mod .= '<div class="'. $m3_class_container .'" >';
 
 if ($m3_intro_head . $m3_intro_txt != '') {
