@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ShapeShifter Modules
  * Description: A page building system using a library of popular layout patterns.
- * Version:     1.1
+ * Version:     1.11
  * Author:      The Elixir Haus
  * Text Domain: shapeshifter
  * Requires at least: 6.4
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SS_PLUGIN_VERSION', '1.1' );
+define( 'SS_PLUGIN_VERSION', '1.11' );
 define( 'SS_BASENAME',       plugin_basename( __FILE__ ) );
 
 $ss_ver = SS_PLUGIN_VERSION;
