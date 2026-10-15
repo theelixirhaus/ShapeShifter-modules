@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: ShapeShifter Modules
- * Description: Consolidated ShapeShifter module library, DarkPhysiCSS framework settings, and Deluxe Block Editor enhancements.
+ * Description: A page building system using a library of popular layout patterns.
  * Version:     1.1
  * Author:      The Elixir Haus
  * Text Domain: shapeshifter

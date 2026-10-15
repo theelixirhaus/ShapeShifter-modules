@@ -28,6 +28,12 @@ body:not(.is-fullscreen-mode) .auto-fold .interface-interface-skeleton {
   margin-right:0
 }
 
+html .block-editor-iframe__container,
+html .block-editor-iframe__scale-container{
+  height:100vh;
+  min-height:800px;
+}
+
 div#adminmenuback{
   background: transparent;
  
@@ -38,9 +44,8 @@ div#adminmenuback{
 }
 
 
-html .is-root-container  :where(.wp-block){
-  max-width: none;
-}
+
+
 
 html.wp-toolbar:not(.show-block-panel), html:not(.show-block-panel) #wpwrap, .block-editor-page #wpwrap {
   background: #111;
@@ -643,7 +648,6 @@ body.block-editor-page
   .is-root-container {
       
        margin:30px 23px 40px !important;
-      height: calc(100vh - 210px);
        overflow-y: auto !important;
           width:auto !important;
 
